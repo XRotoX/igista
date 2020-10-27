@@ -1,0 +1,259 @@
+@font-face {
+  font-family: jaapokkienchance;
+  src: url(../font/RobotoSlab.ttf);
+}
+
+
+body {
+    align-items: center; 
+    background: rgb(13, 17, 19) !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1, h2, h3, h3, h4{
+    color: white;
+    margin: 10px 0 0;
+    font-family: jaapokkienchance;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+p, a{
+    text-decoration: #dddddd;
+    color: #dddddd;
+    font-family: jaapokkienchance;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 3px;
+    padding: 2px;
+}
+
+.top-bar{
+    position: fixed;
+    top: 0; 
+    width: 100%;   
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background: rgb(13, 17, 19);
+    -webkit-box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86); 
+    box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86);
+    z-index: 2;
+}
+
+.logo-container img{
+    height: 80px;
+    width: 100px;
+}
+
+#search{
+    position: relative;
+    background: rgb(36, 40, 42);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 15px 0;
+    color: dodgerblue;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.suggestions{
+    position: relative;
+    background: rgb(36, 40, 42);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 90px 0 10px 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.suggestions > div{
+    padding: 10px 20px;
+    
+}
+
+.suggestion-item{
+    display: flex;
+}
+
+.suggestion-item > img{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.suggestion-item-info{
+    display: inline-grid;
+    margin: 0 10px;
+}
+
+.suggestion-uname{
+    font-size: 20px;
+}
+
+.suggestion-fname{
+    font-size: 15px;
+}
+
+.suggestions > div{
+    padding: 10px 20px;
+    
+}
+
+.feedback{
+    position: sticky;
+    z-index: 2;
+    bottom: 0;
+    right: 15px;
+    visibility: hidden;
+}
+/*****************************/
+.media-container{
+    display: grid;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 0;
+}
+
+.media-container .media-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0; 
+    
+}
+
+.media-container .media-header .media-owner{
+    display: flex;
+}
+
+.media-container .media-header .media-owner .mo-img{
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.media-container .media-header .media-owner .mo-img > img{
+    height: 60px;
+    width: 60px;
+    
+}
+
+.media-container .media-header .media-owner .mo-info{
+    margin-left: 10px;
+}
+
+.media-container .media-header .media-download .downloader{
+    background: white;
+    font-weight: 600;
+}
+
+.media-container .media-content{
+    position: relative;
+    overflow-x: hidden;
+    border-radius: 4px;
+    
+}
+
+.media-container .media-content .media-file {
+    min-height: 300px;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.media-container .media-content .media-file > img{
+    width: 100%;
+    object-fit: cover;
+    transition: 0.7s ease-in-out;
+    
+}
+
+.media-container .media-content .media-file > video{
+    max-width: 500px;
+    object-fit: cover;
+    transition: 0.7s ease-in-out;
+}
+
+
+.media-container .media-info{
+    display: flex;
+    margin: 20px 0;
+    max-width: 500px;
+}
+
+.media-container .media-info .mi-stats .ms{
+    display: flex;
+}
+.media-container .media-info .mi-stats .ms .svg-icon path{
+    fill: #FFF;
+}
+
+.media-container .media-info .mi-description{
+    width: 80%
+}
+
+.media-container .media-info .mi-stats{
+    width: 20%
+}
+
+/*****************************/
+
+i{
+    color: black;
+    transform: translateY(-15%);
+}
+
+i:hover{
+    opacity: .9;
+}
+button:hover{
+    opacity: .9;
+}
+
+.btns{
+    background: white;
+    border-radius: 4px;
+}
+
+.svg-icon {
+  
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #000;
+}
+
+.svg-icon circle {
+  stroke: #000;
+}
+
+.media{
+  -webkit-animation-name: media;
+  -webkit-animation-duration: 1s;
+  animation-name: media;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes media{
+  from {opacity: .4;}
+  to {opacity: 1t;}
+}
+
+@keyframes media{
+  from {opacity: .4;}
+  to {opacity: 1;}
+}
+

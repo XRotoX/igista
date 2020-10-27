@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--script async src="https://www.googletagmanager.com/gtag/js?id=UA-37768618-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-37768618-2');
+    </script-->
+    
+    <title>IG Stories and Posts Download - Igista</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ig stories, storyinsta, stories, igtv, instagram stories, instagram story, sories downloader, download private stories, download private story, download account stories, ig downloader, anonymous story view, stories archive, story archive, instagram week stories, instagram month stories">
+    <meta name="description" content="Download public and private ig stories, profile picture, igtv, reels and posts anonymously ">
+    <link async rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preload" as="font" type="font/ttf" href="/static/font/RobotoSlab.ttf" crossorigin="true">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
+    <link rel="dns-prefetch" href="https://instagram.fcmn2-2.fna.fbcdn.net">
+    <link rel="dns-prefetch" href="https://www.instagram.com/web/search/topsearch/">
+    <link rel="prefetch" href="/profile.html" as="document">
+    <link rel="preload" href="/static/css/style.css" as="style">
+    <link rel="preload" href="/static/js/profileInfo.js" as="script">
+    
+    
+</head>
+    <style>
+        @font-face {
+          font-family: jaapokkienchance;
+          src: url(static/font/RobotoSlab.ttf);
+        }
+
+
+body {
+    align-items: center; 
+    background: rgb(13, 17, 19) !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding-top: 40dp;
+}
+
+h1, h2, h3, h3, h4{
+    color: white;
+    margin: 10px 0 0;
+    font-family: jaapokkienchance;
+    font-weight: 600;
+}
+
+p, a{
+    text-decoration: #dddddd;
+    color: #dddddd;
+    font-family: jaapokkienchance;
+    font-weight: 600;
+}
+.top-bar{
+    position: fixed;
+    top: 0; 
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: rgb(13, 17, 19);
+    -webkit-box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86); 
+    box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86);
+    z-index: 2;
+}
+
+#search{
+    position: relative;
+    display: inline-flex;
+}
+        
+.vl {
+  border-left: 1px solid gray;
+}
+        
+#searchInput{
+    display: inline-grid;
+    position: relative;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: dodgerblue;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 5px;
+    width: 100%;
+}
+        
+.searchBar{
+    display: inline-flex;
+    position: relative;
+    background: rgb(36, 40, 42);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+    border-radius: 4px;
+    padding: 5px 0;
+    margin: 17.5px 0;
+}
+
+.suggestions{
+    position: absolute;
+    background: rgb(36, 40, 42);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+    border-radius: 4px;
+    margin: 85px 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.suggestions > div{
+    padding: 10px;
+    
+    
+}
+
+.suggestion-item{
+    display: flex;
+}
+
+.suggestion-item > img{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+}
+
+.suggestion-item-info{
+    display: inline-grid;
+    margin: 0 10px;
+}
+
+.suggestion-uname{
+    font-size: 20px;
+}
+
+.suggestion-fname{
+    font-size: 15px;
+}
+
+.suggestions > div{
+    padding: 10px 20px;
+    
+}
+/*        
+.container, .container-lg{
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1320px;
+  }
+}
+*/
+.feature{
+    padding: 40px 0;
+}
+
+.feature .feature-info{
+    padding: 10px;
+    
+}
+
+.feature .feature-info .feature-title > h1{
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.feature .feature-info .feature-description > p{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.feature .feature-img{
+    padding: 40px;
+    display: grid;
+    
+    
+}
+
+
+.feature-img > img{
+    height: 100%;
+    height: 200px;
+    width: auto;
+    margin: auto;
+}
+
+
+.faq-list{
+    display: block;
+    width: 90%;
+}
+.faq-list li {
+    list-style: none;
+}
+
+
+.faq-list li {
+    border: none;
+    border-radius: 3px;
+    background: #fff;
+    margin-bottom: 15px;
+
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition:    all 0.3s ease-in-out;
+    -ms-transition:     all 0.3s ease-in-out;
+    -o-transition:      all 0.3s ease-in-out;
+    transition:         all 0.3s ease-in-out;
+
+    -webkit-box-shadow: 0px 5px 30px 0px rgba(38,50,56,0.15);	
+    -moz-box-shadow: 0px 5px 30px 0px rgba(38,50,56,0.15);	
+    box-shadow: 0px 5px 30px 0px rgba(38,50,56,0.15);	
+}
+
+.faq-list li:hover {
+    -webkit-box-shadow: 0px 3px 10px 0px rgba(38,50,56,0.15);	
+    -moz-box-shadow: 0px 3px 10px 0px rgba(38,50,56,0.15);
+    box-shadow: 0px 3px 10px 0px rgba(38,50,56,0.15);
+}
+.faq-list h2{
+        margin: 40px 0;
+}
+
+.faq-list li .question {
+    display: flex;
+    font-weight: 500;
+    border: none;
+    padding: 20px 35px;
+    position: relative;
+   
+}
+
+.faq-list li .question {
+    background: #F5F7F8;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    color: #263238;
+    font-weight: 600;
+}
+        
+.faq-list li .question.on {
+    background: #F5F7F8;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    color: #263238;
+}
+
+.faq-list li .question:before {
+    content: "\f132";
+    font-family: "dashicons";
+    color: #CFD8DC;
+    position: absolute;
+    top: 29px;
+}
+
+.faq-list li .question.on:before {
+    content: "\f460";
+    font-family: "dashicons";
+}
+
+.faq-list li .answer{
+    border-top: 1px solid #ECEFF1;
+    display: none;
+    font-size: 16px;
+    padding: 25px 35px 25px;
+    color: #263238;
+}
+.faq-list li .answer p{
+    color: #263238;
+}
+        
+.svg-icon {
+  
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #FFF;
+}
+
+.svg-icon circle {
+  stroke: #Fbd;
+}
+    </style>
+
+    <header>
+        <template id="mytemplate">
+            <div class="suggestion-item"> 
+                <img class="suggestion-img"
+                src="static/img/profile.jpg"
+                     loading="lazy">
+                <div class="suggestion-item-info"> 
+                     <a href="#" class="suggestion-uname">
+                    </a>
+                    <a href="#" class="suggestion-fname">
+                    </a>
+               </div>
+            </div>
+        </template>
+        
+        <div class="container-lg">
+            <div class="top-bar">
+                 <div class="searchBar">
+                     <button style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                         <svg class="svg-icon" viewBox="0 -5 30 30">
+                            <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+                                c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+                                s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+                                c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z">
+                             </path>
+                        </svg>
+                     </button>
+                     
+                    <div class="vl"></div>
+                    <form role="search" id="search">
+                        <input id="searchInput" 
+                               label="search"
+                               onkeypress="return event.keyCode != 13;"
+                               autocomplete="off" placeholder="Search..." autofocus required />  
+                      <!--label for="search" style="visibility: hidden;">Search Instagram Account.</label-->
+                    </form>
+                     
+                    <svg class="svg-icon" viewBox="-7.5 -7.5 35 35">
+                        <path fill="none" d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
+                            c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519
+                            c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461
+                            s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"></path>
+                    </svg>
+                    </div>
+            </div>
+        </div>
+        <div class="container-lg sug">
+                <div class="suggestions"></div>
+        </div>   
+    </header>
+    <body>
+    
+        
+        <section>
+            <div class="container-lg">
+                
+                <div class="feature">
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="feature-info"> 
+                                <div class="feature-title"> 
+                                    <h1>Download Instgram Stories and Posts easily</h1>
+                                </div>
+                                <div class="feature-description"> 
+                                     <p>Use the search bar to find profiles, posts, tags and more... Download Stories, Highlights, Reels, Profiles Picture in a blink of an eye.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg"> 
+                            <div class="feature-img">
+                                <img src="https://www.clipartkey.com/mpngs/b/24-243306_instagram-clipart.png" alt="Instagram Donwload Pictures Stories Reels Highlights." loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </section>
+        
+        <section>
+            <div style="border:5px solid white; opacity: .4"></div>
+            <div class="container-lg">
+                
+                <div class="feature">
+                    <div class="row">                   
+                        <div class="col-lg"> 
+                            <div class="feature-img">
+                                <img src="https://i0.wp.com/vtography.com/wp-content/uploads/2016/12/instagram_hashtag.png" alt="Instagram Donwload Pictures Stories Reels Highlights." loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="feature-info"> 
+                                <div class="feature-title"> 
+                                    <h1>Explore Public Instagram Posts Feed for any Profile</h1>
+                                </div>
+                                <div class="feature-description"> 
+                                     <p>Igista lets you find any Instagram profile to explore it. We bring to you a new experience away from every minute notifications and messages.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </section>
+        
+        <section>
+            <div style="border:5px solid white; opacity: .4"></div>
+            <div class="container-lg">
+                
+                <div class="feature">
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="feature-info"> 
+                                <div class="feature-title"> 
+                                    <h1>Your privacy is our first concern!</h1>
+                                </div>
+                                <div class="feature-description"> 
+                                     <p>We &lt;3 privacy just like you, so we don't collect or distribute any of your activities with 3rd party.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg"> 
+                            <div class="feature-img">
+                                <img src="/static/img/igista-security.webp" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </section>
+        
+        <section>
+            <div style="border:5px solid white; opacity: .4"></div>
+            
+            <div class="container-lg" style="padding: 40px 0;">
+                
+                       <ul class="faq-list">
+                                <h2>FAQ</h2>
+                              <li><a href="" class="question">What is Igista?</a>
+                                <div class="answer">
+                                <p>Igista is a web app that helps you download easily public Instagram Stories, Posts, Reels and more.</p>
+                                 </div>
+                              </li>
+                                <li><a href="" class="question">How to use Igista?</a>
+                                <div class="answer">
+                                <p>It's easy like counting to 10! Only use the search bar at the top of the page and put a media or profile url or username and we will do the rest :D</p>
+                                 </div>
+                              </li>
+                              
+                              <li><a href="" class="question">Why choosing Igista?</a>
+                                <div class="answer">
+                                <p>Igista is FREE, we built this service for people like you who need to store Instagram ressources whenever they want in an easy and quick way.</p>
+                                 </div>
+                              </li>
+                              <li><a href="" class="question">Does Igista store any of my Instagram credentials?</a>
+                                <div class="answer">
+                                <p>Igista wont ask you to send any of your data, and all your requests will not be stored in our servers.</p>
+                                 </div>
+                              </li>
+                              
+                        </ul>
+                       
+                
+            </div> 
+        </section>
+        
+        
+        
+        
+        
+    </body>
+    <!--a class="feedback" data-nolt="button" href="https://igistaa.nolt.io">Feedback</a>
+    <script async src="https://cdn.nolt.io/widgets.js"></script-->
+    <!--script data-ad-client="ca-pub-2762140483471389" async src="https://pagead2.googlesyndication.com/pagead/js/ad/js/adsbygoogle.js"></script-->
+<script>
+        
+        const searchInput = document.querySelector('#searchInput');
+        const suggestions = document.querySelector('.suggestions');
+
+        searchInput.addEventListener('keyup', function(k){
+
+            setTimeout(function () {
+             const input = searchInput.value;
+             if(input!=''){
+                 document.getElementsByClassName("sug")[0].style.display = "block";
+      $.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+input+'&count=10', function(data, status){
+                 if(status == 'success'){
+
+                    var parent = document.getElementsByClassName("suggestions")[0];
+                    parent.innerHTML = "";
+
+                    for(var i=0; i<data.users.length; i++){
+
+                        var t = document.querySelector('#mytemplate');
+
+
+                        t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
+
+                        t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
+                        t.content.querySelector('.suggestion-uname').href = "profile.html"
+
+                        t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
+                        t.content.querySelector('.suggestion-fname').href = "profile.html"
+                        /*
+                        var username = data.users[i].user.username;
+                        const a = document.createElement('a');
+                        const div = document.createElement('div');
+                        a.href = "/profile/" + username;
+                        a.innerHTML = "@" + username;
+                        div.appendChild(a);
+                        */
+                        var clone = document.importNode(t.content, true);
+                        suggestions.appendChild(clone);
+                    }
+                 }
+                 });
+              }else{
+                  document.getElementsByClassName("sug")[0].style.display = "none";
+              }
+
+            }, 500);
+
+        });
+        jQuery(function( $ ){
+
+            $('.faq-list .question').click( function(){
+                $(this).parent().find('.answer').slideToggle('fast');
+                $(this).toggleClass('on');
+                return false;
+            });
+
+        });
+
+
+    </script>
+    
+    
+    
+
+</html>
+
+
