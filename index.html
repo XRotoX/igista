@@ -58,7 +58,53 @@ p, a{
 a{
     text-decoration: none !important;
 }
+        .btn{
+            cursor: pointer;
+        }
+        .btn:hover{
+            opacity: .92;
+        }
         
+.menu-box{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(36, 40, 42, 0);
+    z-index: 2;
+    transition: 0.2s ease-in-out;
+}
+        
+.menu-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 300px;
+    width: 100%;
+    background: rgb(36, 40, 42);
+    padding: 20px;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.2s ease-in-out;
+}
+
+.menu-box.active{
+    display: block;
+    background: rgb(36, 40, 42, 0.2);
+}
+
+.menu-bar.active{
+    transform: translateX(0);
+}
+        
+        .menu-bar .mbt{
+            display: flex;
+            justify-content: space-between;
+            
+        }
 .top-bar{
     position: fixed;
     top: 0; 
@@ -70,13 +116,13 @@ a{
     box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86);
     z-index: 2;
 }
+        
 
 .top-bar .container{
     display: flex;
-    width: 100vw;
-    margin: 0;
+    width: 100%;
     transform: translateY(25%);
-    justify-content: space-around;
+    justify-content: space-between;
     
 }
         
@@ -94,7 +140,14 @@ a{
     display: inline-flex;
     height: 35px;
     width: auto;
-}   
+} 
+        
+.mlogo img{
+    display: inline-flex;
+    height: 35px;
+    width: auto;
+    padding: 7px;
+} 
 
 #search{
     display: inline-flex;
@@ -129,7 +182,7 @@ a{
 
 .l{
     display: none;
-    width: 127px;
+    transform: translateY(12.5%);
 }
         
 .sug{
@@ -148,10 +201,27 @@ a{
 }
 
 .res{
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
 }
+        
+.suggestions img{
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}
 
+.suggestions video{
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}
+
+#downloader{
+    color: red;
+    width: 50px;
+    height: 30px;
+}
 
 .suggestion-item{
     display: flex;
@@ -408,7 +478,7 @@ margin-left: auto;
                         </a>
                     </div>
                     <div class="searchBar">
-                     <button class="menu-btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                     <button class="menu-btn btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
                          <svg class="svg-icon" viewBox="0 -5 30 30">
                             <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
                                 c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
@@ -439,17 +509,18 @@ margin-left: auto;
                      
                     
                     </div>
-                    <div class="l"></div>
+                    <div class="l">
+                        <a href="/blog">Blog</a>
+                    </div>
                     
                 </div>
         </div>
         <div class="top-bar-p" style="height: 100px;"></div>
-        
         <div class="container">
                 <div class="sug" style="display: none;">
                     <div class="res">
                         <p>Search results</p>
-                        <button id="res-close" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                        <button id="res-close" class="btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
                              <svg class="svg-icon" viewBox="0 -10 25 25">
                                 <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
                             </svg>
@@ -457,6 +528,23 @@ margin-left: auto;
                     </div>
                     <div class="suggestions"></div>
             </div>
+        </div>
+        <div class="menu-box"></div>
+        <div class="menu-bar">
+                <div class="mbt">
+                    <div class="mlogo">
+                        <a href="/">
+                            <img src="static/img/logo.png">
+                        </a>
+                    </div>
+                    
+                    <button class="menu-close btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                             <svg class="svg-icon" viewBox="0 -10 25 25">
+                                <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                            </svg>
+                    </button>
+                </div>
+                
         </div>
            
     </header>
@@ -583,8 +671,6 @@ margin-left: auto;
         
         
     </body>
-    <!--a class="feedback" data-nolt="button" href="https://igistaa.nolt.io">Feedback</a>
-    <script async src="https://cdn.nolt.io/widgets.js"></script-->
     <!--script data-ad-client="ca-pub-2762140483471389" async src="https://pagead2.googlesyndication.com/pagead/js/ad/js/adsbygoogle.js"></script-->
 <script>
         
@@ -592,43 +678,99 @@ margin-left: auto;
         const suggestions = document.querySelector('.suggestions');
         const resClose = document.getElementById("res-close");
 
-        resClose.addEventListener("click", function(){
-            searchInput.value = "";
-            document.getElementsByClassName("sug")[0].style.display = "none";
-        });
-    
-        searchInput.addEventListener('keyup', function(k){
+        
+        searchInput.addEventListener('input', function(k){
 
             setTimeout(function () {
              const input = searchInput.value;
              if(input!=''){
                  document.getElementsByClassName("sug")[0].style.display = "block";
-      $.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+input+'&count=10', function(data, status){
-                 if(status == 'success'){
+                 var postS = false;
+                 var postV = "";
+                 if(input.trim().length == 11){
+                     postS = true;
+                     postV = input.trim();
+                 }
+                 
+                 else if(input.trim().split("/").length > 1){
+                     postS = true;
+                     postV = searchInput.value.trim().split("/").reverse()[1];
+                 }
+                 
+                 if(postS){
+                     console.log(postV);
+                     $.get('https://www.instagram.com/p/'+postV+'/?__a=1', function(data, status){
+                        if(status == 'success'){
+                            var parent = document.getElementsByClassName("suggestions")[0];
+                            parent.innerHTML = "";
+                            const tn=data.graphql.shortcode_media.__typename;
+                            switch(tn) {
+                                case "GraphImage":
+                                    var el = document.createElement('img');
+                                    el.src = data.graphql.shortcode_media.display_url;
+                                    el.loading = "lazy";
+                                    parent.appendChild(el);
+                                    var btn = document.createElement('button');
+                                    btn.setAttribute("id", "downloader");
+                                    btn.innerHTML = "Download";
+                                    btn.dataset.url = data.graphql.shortcode_media.display_url;
+                                    parent.appendChild(btn);
+                                    break;
+                                case "GraphVideo":
+                                    var el = document.createElement('video');
+                                    el.src = data.graphql.shortcode_media.video_url;
+                                    parent.appendChild(el);
+                                    var btn = document.createElement('button');
+                                    btn.setAttribute("id", "downloader");
+                                    btn.innerHTML = "Download";
+                                    btn.dataset.url = data.graphql.shortcode_media.video_url;
+                                    parent.appendChild(btn);
+                                    break;
+                                break;
+                                case "GraphSidecar":
+                                    const d= data.graphql.shortcode_media.edge_sidecar_to_children.edges;
+                                    for(var i=0; i<d.length; i++){
+                                       if(d[i].node.__typename == "GraphImage"){
+                                           var el = document.createElement('img');
+                                            el.src = d[i].node.display_url;
+                                            el.loading = "lazy";
+                                            parent.appendChild(el);
+                                           var btn = document.createElement('button');
+                                           btn.setAttribute("id", "downloader");
+                                           btn.innerHTML = "Download";
+                                            btn.dataset.url = d[i].node.display_url;
+                                            parent.appendChild(btn);
 
+                                       }else{
+                                           var el = document.createElement('video');
+                                            el.src = d[i].node.video_url;
+                                            parent.appendChild(el);
+                                            var btn = document.createElement('button');
+                                           btn.setAttribute("id", "downloader");
+                                           btn.innerHTML = "Download";
+                                            btn.dataset.url = d[i].node.video_url;
+                                            parent.appendChild(btn);
+                                       }
+                                    } 
+                                break;
+                              }
+                        }
+                     });
+                 }
+                 
+                 
+                 $.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+input+'&count=10', function(data, status){
+                 if(status == 'success'){
                     var parent = document.getElementsByClassName("suggestions")[0];
                     parent.innerHTML = "";
 
                     for(var i=0; i<data.users.length; i++){
-
                         var t = document.querySelector('#mytemplate');
-
-
                         t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
-
                         t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
                         t.content.querySelector('.suggestion-uname').href = "profile.html"
-
                         t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
                         t.content.querySelector('.suggestion-fname').href = "profile.html"
-                        /*
-                        var username = data.users[i].user.username;
-                        const a = document.createElement('a');
-                        const div = document.createElement('div');
-                        a.href = "/profile/" + username;
-                        a.innerHTML = "@" + username;
-                        div.appendChild(a);
-                        */
                         var clone = document.importNode(t.content, true);
                         suggestions.appendChild(clone);
                     }
@@ -641,6 +783,33 @@ margin-left: auto;
             }, 500);
 
         });
+    
+        
+        var menuBtn = document.getElementsByClassName("menu-btn")[0];
+        var menuBar = document.getElementsByClassName("menu-bar")[0];
+        var menuBox = document.getElementsByClassName("menu-box")[0];
+        var menuCls = document.getElementsByClassName("menu-close")[0];
+        
+        resClose.addEventListener("click", function(){
+            searchInput.value = "";
+            document.getElementsByClassName("sug")[0].style.display = "none";
+        });
+    
+        menuBtn.addEventListener("click", ()=> {
+            menuBar.classList.toggle("active");
+            menuBox.classList.toggle("active");
+        });
+    
+        menuCls.addEventListener("click", ()=> {
+            menuBar.classList.toggle("active");
+            menuBox.classList.toggle("active");
+        });
+    
+        menuBox.addEventListener("click", ()=> {
+            menuBar.classList.toggle("active");
+            menuBox.classList.toggle("active");
+        });
+        
         jQuery(function( $ ){
             $('.faq-list .question').click( function(){
              $(this).parent().find('.answer').slideToggle('fast');
@@ -648,7 +817,25 @@ margin-left: auto;
                 return false;
             });
         });
-
+    
+        $('#downloader').click(function() { 
+            console.log('clicked');
+            var url = $(this).attr('data-url');
+            var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function() {
+            var a = document.createElement('a');
+            a.href = window.URL.createObjectURL(xhr.response);
+            a.download = filename;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            delete a;
+            };
+            xhr.open('GET', url);
+            xhr.send();
+         });
 
     </script>
     
