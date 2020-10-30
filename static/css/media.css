@@ -1,5 +1,5 @@
 @font-face {
-  font-family: jaapokkienchance;
+  font-family: roboto;
   src: url(../font/RobotoSlab.ttf);
 }
 
@@ -7,77 +7,206 @@
 body {
     align-items: center; 
     background: rgb(13, 17, 19) !important;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    margin: 0;
 }
 
 h1, h2, h3, h3, h4{
     color: white;
     margin: 10px 0 0;
-    font-family: jaapokkienchance;
+    font-family: roboto;
     font-weight: 600;
-    font-size: 18px;
 }
 
 p, a{
-    text-decoration: #dddddd;
     color: #dddddd;
-    font-family: jaapokkienchance;
-    font-size: 15px;
+    font-family: roboto;
     font-weight: 600;
-    margin: 3px;
-    padding: 2px;
 }
 
-.top-bar{
+a{
+    text-decoration: none !important;
+}
+        
+.btn{
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: .92;
+}
+
+.menu-box{
     position: fixed;
-    top: 0; 
-    width: 100%;   
-    display: flex;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    height: 80px;
+    background: rgba(36, 40, 42, 0);
+    z-index: 3;
+    transition: 0.2s ease-in-out;
+}
+        
+.menu-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 300px;
+    width: 100%;
+    background: rgb(36, 40, 42);
+    padding: 20px;
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: 0.2s ease-in-out;
+}
+
+.menu-box.active{
+    display: block;
+    background: rgb(36, 40, 42, 0.2);
+}
+
+.menu-bar.active{
+    transform: translateX(0);
+}
+        
+.menu-bar .mbt{
+    display: flex;
+    justify-content: space-between;
+}
+        
+.top-logo{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    padding: 20px 0 0;
+}
+
+.top-logo img{
+    height: 40px;
+    width: auto;
+}
+        
+.top-bar{
+    position: sticky;
+    top: 0; 
+    display: flex;
+    height: 90px;
+    width: 100%;
     background: rgb(13, 17, 19);
     -webkit-box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86); 
     box-shadow: 0px 9px 25px -7px rgba(0,0,0,0.86);
     z-index: 2;
+}    
+
+.top-bar .container{
+    display: flex;
+    width: 100%;
+    transform: translateY(25%);
+    justify-content: center;
+    
+}      
+
+.vl {
+  border-left: 1px solid gray;
 }
 
-.logo-container img{
-    height: 80px;
-    width: 100px;
-}
+.logo{
+    display: none;
+    padding: 7px;
+} 
+        
+.logo img{
+    display: inline-flex;
+    height: 35px;
+    width: auto;
+} 
+        
+.mlogo img{
+    display: inline-flex;
+    height: 35px;
+    width: auto;
+    padding: 7px;
+} 
 
 #search{
+    display: inline-flex;
+    width: 100%;
+
+}
+        
+#searchInput{
+    display: inline-flex;
     position: relative;
-    background: rgb(36, 40, 42);
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
     border: none;
     outline: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin: 15px 0;
-    color: dodgerblue;
+    background: transparent;
+    color: white;
     font-size: 20px;
     font-weight: 600;
     width: 100%;
+    margin-left: 10px;
 }
-
-.suggestions{
+        
+.searchBar{
+    display: inline-flex;
     position: relative;
     background: rgb(36, 40, 42);
     box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
     border-radius: 4px;
+    padding: 7px 0;
     width: 100%;
-    margin: 90px 0 10px 0;
-    overflow: hidden;
-    z-index: 1;
+    height: 35px;
+    max-width: 400px;
 }
 
-.suggestions > div{
-    padding: 10px 20px;
-    
+.l{
+    display: none;
+    transform: translateY(12.5%);
+}
+        
+.sug{
+    position: relative;
+    background: rgb(36, 40, 42);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 12px;
+    border-radius: 4px;
+    margin: 85px 20px;
+    padding: 0 20px;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+.res{
+    display: flex;
+    justify-content: space-between;
+}
+        
+.suggestions img{
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}
+
+.suggestions video{
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+}
+
+#downloader{
+    display: flex;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    background: white;
+    height: 30px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .suggestion-item{
@@ -105,17 +234,83 @@ p, a{
 }
 
 .suggestions > div{
-    padding: 10px 20px;
+    padding: 10px 0px;
+    
+}
+        
+.col{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+  
+.container, .container-lg{
+padding-right: 15px;
+padding-left: 15px;
+margin-left: auto;
+    margin-right: auto;
+}
+        
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
     
 }
 
-.feedback{
-    position: sticky;
-    z-index: 2;
-    bottom: 0;
-    right: 15px;
-    visibility: hidden;
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+    .top-bar .container{
+        justify-content: space-between;
+
+    }
+     .vl {
+        border-left: 0;
+    }
+    
+    .top-logo{
+        display: none;
+    }
+
+    .menu-btn{
+        display: none;
+    }
+    
+    .logo{
+        display: flex;
+    }
+    
+    .l{
+        display: flex;
+    }
+    
+    .col{
+        width: 50%;
+    }
+
 }
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1320px;
+  }
+}
+
 /*****************************/
 .media-container{
     display: grid;
@@ -249,7 +444,7 @@ button:hover{
 }
 
 .svg-icon circle {
-  stroke: #000;
+  stroke: #FFF;
 }
 
 .media{

@@ -58,13 +58,14 @@ p, a{
 a{
     text-decoration: none !important;
 }
-        .btn{
-            cursor: pointer;
-        }
-        .btn:hover{
-            opacity: .92;
-        }
         
+.btn{
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: .92;
+}
+
 .menu-box{
     position: fixed;
     display: none;
@@ -73,7 +74,7 @@ a{
     height: 100%;
     width: 100%;
     background: rgba(36, 40, 42, 0);
-    z-index: 2;
+    z-index: 3;
     transition: 0.2s ease-in-out;
 }
         
@@ -86,7 +87,7 @@ a{
     width: 100%;
     background: rgb(36, 40, 42);
     padding: 20px;
-    z-index: 2;
+    z-index: 3;
     transform: translateX(-100%);
     transition: 0.2s ease-in-out;
 }
@@ -100,13 +101,25 @@ a{
     transform: translateX(0);
 }
         
-        .menu-bar .mbt{
-            display: flex;
-            justify-content: space-between;
-            
-        }
+.menu-bar .mbt{
+    display: flex;
+    justify-content: space-between;
+}
+        
+.top-logo{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    padding: 20px 0 0;
+}
+
+.top-logo img{
+    height: 40px;
+    width: auto;
+}
+        
 .top-bar{
-    position: fixed;
+    position: sticky;
     top: 0; 
     display: flex;
     height: 90px;
@@ -122,7 +135,7 @@ a{
     display: flex;
     width: 100%;
     transform: translateY(25%);
-    justify-content: space-between;
+    justify-content: center;
     
 }
         
@@ -194,14 +207,13 @@ a{
     padding: 0 20px;
     overflow: hidden;
     z-index: 1;
-    width: 100;
-    max-width: 600px;
+    width: 100%;
+    max-width: 350px;
     margin: auto;
-    
 }
 
 .res{
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
 }
         
@@ -218,9 +230,17 @@ a{
 }
 
 #downloader{
-    color: red;
-    width: 50px;
+    display: flex;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    background: white;
     height: 30px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .suggestion-item{
@@ -276,10 +296,17 @@ margin-left: auto;
   .container, .container-sm, .container-md {
     max-width: 720px;
   }
+    .top-bar .container{
+        justify-content: space-between;
+
+    }
      .vl {
         border-left: 0;
     }
-
+    
+    .top-logo{
+        display: none;
+    }
 
     .menu-btn{
         display: none;
@@ -339,9 +366,7 @@ margin-left: auto;
 
 .feature .feature-img{
     padding: 40px;
-    display: grid;
-    
-    
+    display: grid;    
 }
 
 
@@ -351,7 +376,6 @@ margin-left: auto;
     width: auto;
     margin: auto;
 }
-
 
 
 .faq-list {
@@ -469,7 +493,29 @@ margin-left: auto;
                </div>
             </div>
         </template>
-        
+        <div class="top-logo">
+            <img src="static/img/logo.png">
+        </div>
+        <div class="menu-box"></div>
+        <div class="menu-bar">
+                <div class="mbt">
+                    <div class="mlogo">
+                        <a href="/">
+                            <img src="static/img/logo.png">
+                        </a>
+                    </div>
+                    
+                    <button class="menu-close btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                             <svg class="svg-icon" viewBox="0 -10 25 25">
+                                <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                            </svg>
+                    </button>
+                </div>
+                
+        </div>
+           
+    </header>
+    <body>
         <div class="top-bar">
                 <div class="container">
                     <div class="logo">
@@ -515,7 +561,6 @@ margin-left: auto;
                     
                 </div>
         </div>
-        <div class="top-bar-p" style="height: 100px;"></div>
         <div class="container">
                 <div class="sug" style="display: none;">
                     <div class="res">
@@ -529,27 +574,6 @@ margin-left: auto;
                     <div class="suggestions"></div>
             </div>
         </div>
-        <div class="menu-box"></div>
-        <div class="menu-bar">
-                <div class="mbt">
-                    <div class="mlogo">
-                        <a href="/">
-                            <img src="static/img/logo.png">
-                        </a>
-                    </div>
-                    
-                    <button class="menu-close btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
-                             <svg class="svg-icon" viewBox="0 -10 25 25">
-                                <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
-                            </svg>
-                    </button>
-                </div>
-                
-        </div>
-           
-    </header>
-    <body>
-    
         
         <section>
             <div class="container">
@@ -632,8 +656,7 @@ margin-left: auto;
         </section>
         
         <section>
-            <div style="border:5px solid white; opacity: .4"></div>
-            
+            <div style="border:5px solid white; opacity: .4"></div>     
             <div class="container">
                 
                        <ul class="faq-list">
@@ -673,11 +696,29 @@ margin-left: auto;
     </body>
     <!--script data-ad-client="ca-pub-2762140483471389" async src="https://pagead2.googlesyndication.com/pagead/js/ad/js/adsbygoogle.js"></script-->
 <script>
-        
+    
+        $('#downloader').click(function() { 
+            console.log('clicked');
+            var url = $(this).attr('data-url');
+            var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function() {
+            var a = document.createElement('a');
+            a.href = window.URL.createObjectURL(xhr.response);
+            a.download = filename;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            delete a;
+            };
+            xhr.open('GET', url);
+            xhr.send();
+         });
+    
+    
         const searchInput = document.querySelector('#searchInput');
         const suggestions = document.querySelector('.suggestions');
-        const resClose = document.getElementById("res-close");
-
         
         searchInput.addEventListener('input', function(k){
 
@@ -776,9 +817,9 @@ margin-left: auto;
                     }
                  }
                  });
-              }else{
-                  document.getElementsByClassName("sug")[0].style.display = "none";
-              }
+                  }else{
+                      document.getElementsByClassName("sug")[0].style.display = "none";
+                  }
 
             }, 500);
 
@@ -789,6 +830,7 @@ margin-left: auto;
         var menuBar = document.getElementsByClassName("menu-bar")[0];
         var menuBox = document.getElementsByClassName("menu-box")[0];
         var menuCls = document.getElementsByClassName("menu-close")[0];
+        var resClose = document.getElementById("res-close");
         
         resClose.addEventListener("click", function(){
             searchInput.value = "";
@@ -818,24 +860,6 @@ margin-left: auto;
             });
         });
     
-        $('#downloader').click(function() { 
-            console.log('clicked');
-            var url = $(this).attr('data-url');
-            var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
-            var xhr = new XMLHttpRequest();
-            xhr.responseType = 'blob';
-            xhr.onload = function() {
-            var a = document.createElement('a');
-            a.href = window.URL.createObjectURL(xhr.response);
-            a.download = filename;
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            delete a;
-            };
-            xhr.open('GET', url);
-            xhr.send();
-         });
 
     </script>
     

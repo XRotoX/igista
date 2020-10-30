@@ -23,89 +23,105 @@
     <link rel="stylesheet" type="text/css" href="static/css/media.css">
     
 </head>
-    <template id="mytemplate">
-                <div class="suggestion-item"> 
-                    <img class="suggestion-img"
-                    src="static/img/profile.jpg"
-                         loading="lazy">
-                    <div class="suggestion-item-info"> 
-                         <a href="#" class="suggestion-uname">
-                            @__rotoo__
-                        </a>
-                        <a href="#" class="suggestion-fname">
-                            Mohammed Rhaouti
-                        </a>
-                   </div>
-                </div>
-      </template>
-    <template id="profile-info">
-        <div class="profile-info"> 
-            <div class="profile-img-container">
-                <img class="profile-img" src="" alt="" loading="lazy">
-                
-                <button id="downloader" class="btn downloader" 
-                 style="position:absolute; right:0; bottom:0; transform: translate(-25%, -25%); cursor: pointer;">
-                    <span class="fa fa-download" style="position: relative;"></span>
-                </button>
-                
+    
+    <header>
+        <template id="mytemplate">
+            <div class="suggestion-item"> 
+                <img class="suggestion-img"
+                src="static/img/profile.jpg"
+                     loading="lazy">
+                <div class="suggestion-item-info"> 
+                     <a href="#" class="suggestion-uname">
+                    </a>
+                    <a href="#" class="suggestion-fname">
+                    </a>
+               </div>
             </div>
-            <div class="profile-item-info"> 
-                <a href="#" class="profile-fname">
-                </a>
-                 <a href="#" class="profile-uname">
-                </a>
-                
-                <h4>Biography</h4>
-                <p class="bio">
-                </p>
-           </div>
+        </template>
+        <div class="top-logo">
+            <img src="static/img/logo.png">
         </div>
-        
-        <script>
-            $('.downloader').click(function() {
+        <div class="menu-box"></div>
+        <div class="menu-bar">
+                <div class="mbt">
+                    <div class="mlogo">
+                        <a href="/">
+                            <img src="static/img/logo.png">
+                        </a>
+                    </div>
+                    
+                    <button class="menu-close btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                             <svg class="svg-icon" viewBox="0 -10 25 25">
+                                <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                            </svg>
+                    </button>
+                </div>
                 
-                var url = $(this).attr('data-url');
-                var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
-                var xhr = new XMLHttpRequest();
-                xhr.responseType = 'blob';
-                xhr.onload = function() {
-                var a = document.createElement('a');
-                a.href = window.URL.createObjectURL(xhr.response);
-                a.download = filename;
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                delete a;
-                };
-                xhr.open('GET', url);
-                xhr.send();
-             });
-        </script>
-      </template>
+        </div>
+    </header>
     
 
     <body>
-    
         <div class="top-bar">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div>
-                          <form role="search">
-                                <input id="search" 
-                                       onkeypress="return event.keyCode != 13;"
-                                       autocomplete="off" placeholder="Search..." autofocus required />  
-                            </form>
+                <div class="container">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="static/img/logo.png">
+                        </a>
                     </div>
+                    <div class="searchBar">
+                     <button class="menu-btn btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                         <svg class="svg-icon" viewBox="0 -5 30 30">
+                            <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+                                c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+                                s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+                                c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z">
+                             </path>
+                        </svg>
+                     </button>
+                     
+                    <div class="vl"></div>
+                    <form role="search" id="search">
+                        <input id="searchInput" 
+                               label="search"
+                               onkeypress="return event.keyCode != 13;"
+                               autocomplete="off" placeholder="Search..." autofocus required />  
+                      <!--label for="search" style="visibility: hidden;">Search Instagram Account.</label-->
+                    </form>
+                     
+                     
+                     <button style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                            <svg class="svg-icon" viewBox="0 -5 30 30">
+                                <path fill="none" d="M19.129,18.164l-4.518-4.52c1.152-1.373,1.852-3.143,1.852-5.077c0-4.361-3.535-7.896-7.896-7.896
+                                    c-4.361,0-7.896,3.535-7.896,7.896s3.535,7.896,7.896,7.896c1.934,0,3.705-0.698,5.078-1.853l4.52,4.519
+                                    c0.266,0.268,0.699,0.268,0.965,0C19.396,18.863,19.396,18.431,19.129,18.164z M8.567,15.028c-3.568,0-6.461-2.893-6.461-6.461
+                                    s2.893-6.461,6.461-6.461c3.568,0,6.46,2.893,6.46,6.461S12.135,15.028,8.567,15.028z"></path>
+                            </svg>
+                     </button>
+                     
+                    
+                    </div>
+                    <div class="l">
+                        <a href="/blog">Blog</a>
+                    </div>
+                    
                 </div>
-            </div>
-        </div>     
+        </div>
         <div class="container">
-                <div class="row justify-content-md-center">
-                        <div class="col-md-auto">
-                            <div class="suggestions"></div>
-                        </div>
-                </div>
-            </div>   
+                <div class="sug" style="display: none;">
+                    <div class="res">
+                        <p>Search results</p>
+                        <button id="res-close" class="btn" style="background: none; width: 2.3em; height: 2.3em;outline: none; border: none; margin: 0 5px;">
+                             <svg class="svg-icon" viewBox="0 -10 25 25">
+                                <path fill="none" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                            </svg>
+                         </button>
+                    </div>
+                    <div class="suggestions"></div>
+            </div>
+        </div>
+        
+        
         <div class="container">
             <div class="media-container">
                 <div class="media-header">
