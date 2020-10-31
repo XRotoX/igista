@@ -21,6 +21,7 @@ p, a{
     color: #dddddd;
     font-family: roboto;
     font-weight: 600;
+    margin: 0 0 10px 0;
 }
 
 a{
@@ -106,6 +107,12 @@ a{
     
 }      
 
+.top-bar .svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #FFF;
+}
+
 .vl {
   border-left: 1px solid gray;
 }
@@ -173,9 +180,8 @@ a{
     padding: 0 20px;
     overflow: hidden;
     z-index: 1;
-    width: 100%;
     max-width: 350px;
-    margin: auto;
+    margin: 10px auto;
 }
 
 .res{

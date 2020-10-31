@@ -173,9 +173,9 @@ a{
     padding: 0 20px;
     overflow: hidden;
     z-index: 1;
-    width: 100%;
     max-width: 350px;
-    margin: auto;
+    margin: 10px auto;
+
 }
 
 .res{
