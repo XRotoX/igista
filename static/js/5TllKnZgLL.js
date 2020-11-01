@@ -2,7 +2,7 @@
 var slideIndex = 1;
 
 $(document).ready(function(){
-     const media_link = "CG2SE-HDUGf";
+     const media_link = "CGdJj96jrrb";
     //var url = document.URL;
     //var parts = url.split('/');
     //var media_link = parts.pop() || parts.pop(); 

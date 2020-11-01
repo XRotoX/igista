@@ -3,14 +3,17 @@ var s = true;
 var id;
 $(document).ready(function(){
     const username = "mustapha_swinga";
+    //var url = document.URL;
+    //var parts = url.split('/');
+    //var username = parts.pop() || parts.pop(); 
     $.get('https://www.instagram.com/'+username+'/?__a=1', function(data, status){
          if(status == 'success'){
-                id = data.graphql.user.id;
-                if(data.graphql.user.edge_owner_to_timeline_media.page_info.has_next_page){
-                    next = data.graphql.user.edge_owner_to_timeline_media.page_info.end_cursor;
-                }else{
-                    next = "1";
-                }
+            id = data.graphql.user.id;
+            if(data.graphql.user.edge_owner_to_timeline_media.page_info.has_next_page){
+                next = data.graphql.user.edge_owner_to_timeline_media.page_info.end_cursor;
+            }else{
+                next = "1";
+            }
              var profileParent = document.getElementsByClassName("profile-info-container")[0];
              
              const h4 =document.getElementsByClassName("pf")[0];
@@ -21,6 +24,20 @@ $(document).ready(function(){
              pt.content.querySelector('.profile-img').alt = data.graphql.user.username + " Profile Picture Instagram";
              pt.content.querySelector('.profile-uname').textContent = "@" + data.graphql.user.username;
              pt.content.querySelector('.profile-fname').textContent = data.graphql.user.full_name; 
+             if(data.graphql.user.edge_related_profiles){
+                 for(var i=0; i<10; i++){
+                     e = data.graphql.user.edge_related_profiles.edges[i];
+                     var img = document.createElement("img");
+                     img.src = e.node.profile_pic_url;
+                     var a = document.createElement("a");
+                     a.href = "/profile/" + e.node.username + "/";
+                     a.appendChild(img);
+                     var psi = document.createElement("div");
+                     psi.className = "psi";
+                     psi.appendChild(a);
+                     pt.content.querySelector('.psis').appendChild(psi);
+                 }
+             }
              pt.content.querySelector('#downloader').dataset.url = data.graphql.user.profile_pic_url_hd; 
 
              pt.content.querySelector('.bio').textContent = data.graphql.user.biography.replace("↵", "test");

@@ -25,7 +25,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="static/img/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon/favicon-16x16.png">
     
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -35,8 +34,8 @@
     <link rel="dns-prefetch" href="https://instagram.fcmn2-2.fna.fbcdn.net">
     <link rel="dns-prefetch" href="https://www.instagram.com/web/search/topsearch/">
 
-    <link rel="preload" href="/static/css/HDG3QG8ic8.css" as="style">
-    <link rel="preload" href="/static/js/xwEP9u6epz.js" as="script">
+    <link async rel="stylesheet" href="/static/css/HDG3QG8ic8.css" as="style">
+    <link async href="/static/js/xwEP9u6epz.js" as="script">
     
     
 </head>
@@ -206,7 +205,20 @@ a{
 
 .l{
     display: none;
+    background: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
     transform: translateY(12.5%);
+}
+        
+.l:hover{
+    opacity: .9;
+}
+
+.l a{
+    color: black;
+    margin: auto;
 }
         
 .sug{
@@ -327,7 +339,7 @@ margin-left: auto;
     }
     
     .l{
-        display: block;
+        display: flex;
     }
     
     .col{
@@ -583,6 +595,26 @@ margin-left: auto;
                             </svg>
                          </button>
                     </div>
+                    <script>
+                        $('#downloader').click(function() { 
+                            console.log('clicked');
+                            var url = $(this).attr('data-url');
+                            var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+                            var xhr = new XMLHttpRequest();
+                            xhr.responseType = 'blob';
+                            xhr.onload = function() {
+                            var a = document.createElement('a');
+                            a.href = window.URL.createObjectURL(xhr.response);
+                            a.download = filename;
+                            a.style.display = 'none';
+                            document.body.appendChild(a);
+                            a.click();
+                            delete a;
+                            };
+                            xhr.open('GET', url);
+                            xhr.send();
+                         });
+                    </script>
                     <div class="suggestions"></div>
             </div>
         </div>
@@ -727,7 +759,26 @@ margin-left: auto;
             xhr.open('GET', url);
             xhr.send();
          });
-    
+        
+        function profileSearch(input){
+            $.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+input+'&count=10', function(data, status){
+                 if(status == 'success'){
+                    var parent = document.getElementsByClassName("suggestions")[0];
+                    parent.innerHTML = "";
+
+                    for(var i=0; i<data.users.length; i++){
+                        var t = document.querySelector('#mytemplate');
+                        t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
+                        t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
+                        t.content.querySelector('.suggestion-uname').href = "profile.html"
+                        t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
+                        t.content.querySelector('.suggestion-fname').href = "profile.html"
+                        var clone = document.importNode(t.content, true);
+                        suggestions.appendChild(clone);
+                    }
+                 }
+                 });
+        }
     
         const searchInput = document.querySelector('#searchInput');
         const suggestions = document.querySelector('.suggestions');
@@ -807,28 +858,14 @@ margin-left: auto;
                                     } 
                                 break;
                               }
+                        }else{
+                            profileSearch(input);
                         }
                      });
+                 }else{
+                     profileSearch(input);
                  }
                  
-                 
-                 $.get('https://www.instagram.com/web/search/topsearch/?context=blended&query='+input+'&count=10', function(data, status){
-                 if(status == 'success'){
-                    var parent = document.getElementsByClassName("suggestions")[0];
-                    parent.innerHTML = "";
-
-                    for(var i=0; i<data.users.length; i++){
-                        var t = document.querySelector('#mytemplate');
-                        t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
-                        t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
-                        t.content.querySelector('.suggestion-uname').href = "profile.html"
-                        t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
-                        t.content.querySelector('.suggestion-fname').href = "profile.html"
-                        var clone = document.importNode(t.content, true);
-                        suggestions.appendChild(clone);
-                    }
-                 }
-                 });
                   }else{
                       document.getElementsByClassName("sug")[0].style.display = "none";
                   }

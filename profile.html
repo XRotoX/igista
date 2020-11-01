@@ -46,52 +46,86 @@
                 </div>
       </template>
         <template id="profile-info">
-        <div class="profile-info"> 
-            <div class="profile-img-container">
-                <div class="pimg">
-                    <img class="profile-img" loading="lazy">
+            <div class="profile-info"> 
+                <div class="profile-img-container">
+                    <div class="pimg">
+                        <img class="profile-img" loading="lazy">
+                    </div>
+                    <div class="ptitle">
+                        <a class="profile-uname"></a>
+                    </div>
+                    <button id="downloader" class="btn downloader" 
+                     style="position:absolute; right:0; bottom:0; transform: translate(-25%, -25%); cursor: pointer;padding: 0; background: rgba(0, 0, 0, 0.5); border-radius: 99px; ">
+                        <svg class="svg-icon" viewBox="-5 -2.5 30 30">
+                            <path fill="none" d="M15.608,6.262h-2.338v0.935h2.338c0.516,0,0.934,0.418,0.934,0.935v8.879c0,0.517-0.418,0.935-0.934,0.935H4.392c-0.516,0-0.935-0.418-0.935-0.935V8.131c0-0.516,0.419-0.935,0.935-0.935h2.336V6.262H4.392c-1.032,0-1.869,0.837-1.869,1.869v8.879c0,1.031,0.837,1.869,1.869,1.869h11.216c1.031,0,1.869-0.838,1.869-1.869V8.131C17.478,7.099,16.64,6.262,15.608,6.262z M9.513,11.973c0.017,0.082,0.047,0.162,0.109,0.226c0.104,0.106,0.243,0.143,0.378,0.126c0.135,0.017,0.274-0.02,0.377-0.126c0.064-0.065,0.097-0.147,0.115-0.231l1.708-1.751c0.178-0.183,0.178-0.479,0-0.662c-0.178-0.182-0.467-0.182-0.645,0l-1.101,1.129V1.588c0-0.258-0.204-0.467-0.456-0.467c-0.252,0-0.456,0.209-0.456,0.467v9.094L8.443,9.553c-0.178-0.182-0.467-0.182-0.645,0c-0.178,0.184-0.178,0.479,0,0.662L9.513,11.973z"></path>
+                        </svg>
+                    </button>
+
                 </div>
-                <div class="ptitle">
-                    <a class="profile-uname"></a>
-                </div>
-                <button id="downloader" class="btn downloader" 
-                 style="position:absolute; right:0; bottom:0; transform: translate(-25%, -25%); cursor: pointer;padding: 0; background: rgba(0, 0, 0, 0.5); border-radius: 99px; ">
-                    <svg class="svg-icon" viewBox="-5 -2.5 30 30">
-                        <path fill="none" d="M15.608,6.262h-2.338v0.935h2.338c0.516,0,0.934,0.418,0.934,0.935v8.879c0,0.517-0.418,0.935-0.934,0.935H4.392c-0.516,0-0.935-0.418-0.935-0.935V8.131c0-0.516,0.419-0.935,0.935-0.935h2.336V6.262H4.392c-1.032,0-1.869,0.837-1.869,1.869v8.879c0,1.031,0.837,1.869,1.869,1.869h11.216c1.031,0,1.869-0.838,1.869-1.869V8.131C17.478,7.099,16.64,6.262,15.608,6.262z M9.513,11.973c0.017,0.082,0.047,0.162,0.109,0.226c0.104,0.106,0.243,0.143,0.378,0.126c0.135,0.017,0.274-0.02,0.377-0.126c0.064-0.065,0.097-0.147,0.115-0.231l1.708-1.751c0.178-0.183,0.178-0.479,0-0.662c-0.178-0.182-0.467-0.182-0.645,0l-1.101,1.129V1.588c0-0.258-0.204-0.467-0.456-0.467c-0.252,0-0.456,0.209-0.456,0.467v9.094L8.443,9.553c-0.178-0.182-0.467-0.182-0.645,0c-0.178,0.184-0.178,0.479,0,0.662L9.513,11.973z"></path>
-                    </svg>
-                </button>
-                
+                <div class="profile-item-info">
+                    <h4>Full name</h4>
+                    <p class="profile-fname"></p>
+
+                    <h4>Biography</h4>
+                    <p class="bio">
+                    </p>
+               </div>
+                <div class="ps">
+                  
+                    <h4>Similar accounts</h4>
+                    <div class="psisc">
+                        <button label="Swipe Stories Left" id="left-button" class="btn" style="left: 5px; top:50%;transform: translateY(-25%); position: absolute; background: black; opacity: .4; z-index: 1;">
+                                <svg class="svg-icon" viewBox="0 0 20 20">
+                                    <path fill="none" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
+                                </svg>
+                            </button>
+
+                            <button label="Swipe Stories Right" id="right-button" class="btn" style="right: 5px; top:50%; transform: translateY(-25%); position: absolute; background: black; opacity: .4; z-index: 1;">
+                                <svg class="svg-icon" viewBox="0 0 20 20">
+                                    <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+                                </svg>
+                            </button>
+                        <div class="psis">
+                        </div>
+                    </div>
+                    
+                    
+               </div>
             </div>
-            <div class="profile-item-info">
-                <h4>Full name</h4>
-                <p class="profile-fname"></p>
-    
-                <h4>Biography</h4>
-                <p class="bio">
-                </p>
-           </div>
-        </div>
-        
-        <script>
-            $('.downloader').click(function() {
+
+            <script>
                 
-                var url = $(this).attr('data-url');
-                var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
-                var xhr = new XMLHttpRequest();
-                xhr.responseType = 'blob';
-                xhr.onload = function() {
-                var a = document.createElement('a');
-                a.href = window.URL.createObjectURL(xhr.response);
-                a.download = filename;
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                delete a;
-                };
-                xhr.open('GET', url);
-                xhr.send();
-             });
-        </script>
+                $('#right-button').click(function() {
+                          event.preventDefault();
+                          $('.psis').animate({
+                            scrollLeft: "+=200px"
+                          }, "fast");    
+                        });
+                         $('#left-button').click(function() {
+                          event.preventDefault();
+                          $('.psis').animate({
+                            scrollLeft: "-=200px"
+                          }, "fast");
+                        });
+                
+                $('.downloader').click(function() {
+                    var url = $(this).attr('data-url');
+                    var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+                    var xhr = new XMLHttpRequest();
+                    xhr.responseType = 'blob';
+                    xhr.onload = function() {
+                    var a = document.createElement('a');
+                    a.href = window.URL.createObjectURL(xhr.response);
+                    a.download = filename;
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    delete a;
+                    };
+                    xhr.open('GET', url);
+                    xhr.send();
+                 });
+            </script>
       </template>  
         <div class="top-logo">
             <a href="/">
@@ -165,6 +199,7 @@
                     
                 </div>
         </div>
+        
         <div class="container">
                 <div class="sug" style="display: none;">
                     <div class="res">
@@ -179,13 +214,12 @@
             </div>
         </div>
         
-        
         <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-md-4">
+
+                <div class="col4">
                     <div class="profile-info-container"></div>
                 </div>
-                <div class="col-md-8">
+                <div class="col8">
                     <div id="stories-container" class="stories-container">
                         <h4>Stories and highlights</h4>
                         <button label="Swipe Stories Left" id="left-button" class="btn" style="left: 5px; top:50%;">
@@ -207,7 +241,6 @@
                     </div>
                     
                 </div>
-            </div>
             
             
         </div> 

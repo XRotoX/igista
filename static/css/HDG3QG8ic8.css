@@ -161,7 +161,20 @@ a{
 
 .l{
     display: none;
+    background: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
     transform: translateY(12.5%);
+}
+        
+.l:hover{
+    opacity: .9;
+}
+
+.l a{
+    color: black;
+    margin: auto;
 }
         
 .sug{
@@ -237,92 +250,35 @@ a{
     padding: 10px 0px;
     
 }
-        
-.col{
+
+.container{
     display: block;
+}
+
+.col4{
     width: 100%;
-    margin: auto;
-}
-  
-.container, .container-lg{
-padding-right: 15px;
-padding-left: 15px;
-margin-left: auto;
-    margin-right: auto;
-}
-        
-@media (min-width: 576px) {
-  .container, .container-sm {
-    max-width: 540px;
-  }
     
 }
 
-@media (min-width: 768px) {
-  .container, .container-sm, .container-md {
-    max-width: 720px;
-  }
-    .top-bar .container{
-        justify-content: space-between;
-
-    }
-     .vl {
-        border-left: 0;
-    }
-    
-    .top-logo{
-        display: none;
-    }
-
-    .menu-btn{
-        display: none;
-    }
-    
-    .logo{
-        display: flex;
-    }
-    
-    .l{
-        display: flex;
-    }
-    
-    .col{
-        width: 50%;
-    }
-
+.col8{
+    width: 100%;
 }
 
-@media (min-width: 992px) {
-  .container, .container-sm, .container-md, .container-lg {
-    max-width: 960px;
-  }
 
-}
-
-@media (min-width: 1200px) {
-  .container, .container-sm, .container-md, .container-lg{
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container, .container-sm, .container-md, .container-lg{
-    max-width: 1320px;
-  }
-}
 
 
 .profile-info{
-    margin: auto;
     justify-content: flex-start;
+    width: 100%;
     max-width: 240px;
     margin-bottom: 20px;
     padding: 40px 0;
+    margin: auto;
 }
 
 .profile-info .profile-img-container{
     position: relative;
-    width: 240px;
+    max-width: 240px;
     height: 300px;
     border-radius: 7px;
     background: #FFF;
@@ -330,7 +286,7 @@ margin-left: auto;
 }
 
 .profile-info .profile-img-container .pimg > img{
-    width: 240px;
+    max-width: 240px;
     height: 300px;
     object-fit: cover;
 }
@@ -345,6 +301,8 @@ margin-left: auto;
     display: inline-grid;
     overflow: hidden;
     padding-top: 20px;
+    width: 100%;
+    max-width: 240px;
 }
 
 .stories-container{
@@ -371,16 +329,45 @@ margin-left: auto;
     object-fit: cover;
     margin-right: 20px;
 }
-                        
-/*
+       
+.psisc{
+    position: relative;
+}
+.psis{
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.psis .psi{
+    display: flex;
+    height: 90px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.psis .psi img{
+    height: 90px;
+    width: 90px;
+    margin: auto;
+    object-fit: cover;
+}
+
+
 .btn{
     position: relative;
     outline: none;
-    border: 0;
-    height: 30px; 
-    width: 30px; 
+    border: none;
+    border-radius: 99px;
 }
 
+.btn:hover{
+    cursor: pointer;
+    opacity: .5;
+}
+/*
 .btn:focus {
   box-shadow: none;
 }
@@ -493,5 +480,83 @@ post-container .posts-feed .posts > a{
 
 .svg-icon circle {
   stroke: #Fbd;
+}
+
+.container, .container-lg{
+padding-right: 15px;
+padding-left: 15px;
+margin-left: auto;
+    margin-right: auto;
+}
+        
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+    
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+    .top-bar .container{
+        justify-content: space-between;
+
+    }
+     .vl {
+        border-left: 0;
+    }
+    
+    .top-logo{
+        display: none;
+    }
+
+    .menu-btn{
+        display: none;
+    }
+    
+    .logo{
+        display: flex;
+    }
+    
+    .l{
+        display: flex;
+    }
+
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+    
+    .container{
+        display: flex;
+    }
+    .col4{
+        width: 30%;
+    }
+
+    .col8{
+        width: 70%;
+    }
+    .profile-info{
+        margin: 0;
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1320px;
+  }
 }
 
