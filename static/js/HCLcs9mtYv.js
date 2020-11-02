@@ -90,9 +90,9 @@ searchInput.addEventListener('input', function(k){
                 var t = document.querySelector('#mytemplate');
                 t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
                 t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
-                t.content.querySelector('.suggestion-uname').href = "profile.html"
+                t.content.querySelector('.suggestion-uname').href = "/profile/" + data.users[i].user.username + "/";
                 t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
-                t.content.querySelector('.suggestion-fname').href = "profile.html"
+                t.content.querySelector('.suggestion-fname').href = "/profile/" + data.users[i].user.username + "/";
                 var clone = document.importNode(t.content, true);
                 suggestions.appendChild(clone);
             }

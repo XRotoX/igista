@@ -2,10 +2,10 @@
 var slideIndex = 1;
 
 $(document).ready(function(){
-     const media_link = "CGdJj96jrrb";
-    //var url = document.URL;
-    //var parts = url.split('/');
-    //var media_link = parts.pop() || parts.pop(); 
+     //const media_link = "CGdJj96jrrb";
+    var url = document.URL;
+    var parts = url.split('/');
+    var media_link = parts.pop() || parts.pop(); 
     $.get('https://www.instagram.com/p/'+media_link+'/?__a=1', function(data, status){
         if(status == 'success'){
             const tn=data.graphql.shortcode_media.__typename;

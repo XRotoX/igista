@@ -300,72 +300,7 @@ a{
     margin: auto;
 }
   
-.container, .container-lg{
-padding-right: 15px;
-padding-left: 15px;
-margin-left: auto;
-    margin-right: auto;
-}
-        
-@media (min-width: 576px) {
-  .container, .container-sm {
-    max-width: 540px;
-  }
-    
-}
 
-@media (min-width: 768px) {
-  .container, .container-sm, .container-md {
-    max-width: 720px;
-  }
-    .top-bar .container{
-        justify-content: space-between;
-
-    }
-     .vl {
-        border-left: 0;
-    }
-    
-    .top-logo{
-        display: none;
-    }
-
-    .menu-btn{
-        display: none;
-    }
-    
-    .logo{
-        display: flex;
-    }
-    
-    .l{
-        display: flex;
-    }
-    
-    .col{
-        width: 50%;
-    }
-
-}
-
-@media (min-width: 992px) {
-  .container, .container-sm, .container-md, .container-lg {
-    max-width: 960px;
-  }
-
-}
-
-@media (min-width: 1200px) {
-  .container, .container-sm, .container-md, .container-lg{
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container, .container-sm, .container-md, .container-lg{
-    max-width: 1320px;
-  }
-}
 
 .feature{
     padding: 40px 0;
@@ -403,6 +338,7 @@ margin-left: auto;
 .faq-list {
     padding: 0;
     list-style-type: none;
+    width: 100%;
 }
 
         
@@ -483,7 +419,18 @@ margin-left: auto;
 .faq-list li .answer p{
     color: #263238;
 }
+    
+.sug-profiles{
+    display: inline-flex;
+    overflow: hidden;
+    margin: 20px;
+}
         
+.sug-profiles img{
+    height: 50px;
+    width: 50px;
+}
+
 .svg-icon {
   
   width: 2.3em;
@@ -499,6 +446,74 @@ margin-left: auto;
 .svg-icon circle {
   stroke: #Fbd;
 }
+
+.container, .container-lg{
+padding-right: 15px;
+padding-left: 15px;
+margin-left: auto;
+    margin-right: auto;
+}
+        
+@media (min-width: 576px) {
+  .container, .container-sm {
+    max-width: 540px;
+  }
+    
+}
+
+@media (min-width: 768px) {
+  .container, .container-sm, .container-md {
+    max-width: 720px;
+  }
+    .top-bar .container{
+        justify-content: space-between;
+
+    }
+     .vl {
+        border-left: 0;
+    }
+    
+    .top-logo{
+        display: none;
+    }
+
+    .menu-btn{
+        display: none;
+    }
+    
+    .logo{
+        display: flex;
+    }
+    
+    .l{
+        display: flex;
+    }
+    
+    .col{
+        width: 70%;
+    }
+
+}
+
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md, .container-lg {
+    max-width: 960px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md, .container-lg{
+    max-width: 1320px;
+  }
+}
+
     </style>
 
     <header>
@@ -672,12 +687,12 @@ margin-left: auto;
             </div> 
         </section>
         
+    
         <section>
             <div style="border:5px solid white; opacity: .4"></div>
             <div class="container">
                 
                 <div class="feature">
-                    <div class="row">
                         <div class="col">
                             <div class="feature-info"> 
                                 <div class="feature-title"> 
@@ -693,7 +708,6 @@ margin-left: auto;
                                 <img src="static/img/igista-security.webp" loading="lazy">
                             </div>
                         </div>
-                    </div>
                 </div>
                 
             </div> 
@@ -733,6 +747,43 @@ margin-left: auto;
             </div> 
         </section>
         
+        <section>
+            <div style="border:5px solid white; opacity: .4"></div> 
+            <h4 style="text-align: center">Top instagram profiles</h4>
+            <div class="sug-profiles">
+                <div class="profile">
+                    <a href="/profile/instagram/">
+                        <img src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/s150x150/119381356_363756831450146_3008355575418576013_n.jpg?_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_ohc=6rHdgXYsN0MAX-zB-Y0&oh=667a3ea025443fa536b90ce712ffdad6&oe=5FC702F6">
+                    </a>
+                </div>
+                
+                <div class="profile">
+                    <a href="/profile/cristiano/">
+                        <img src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/s150x150/67310557_649773548849427_4130659181743046656_n.jpg?_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_ohc=Ie_nKFiHuSYAX9i0PKZ&oh=526ba2f34867795ee927e7077c1290eb&oe=5FCA1153">
+                    </a>
+                </div>
+                
+                <div class="profile">
+                    <a href="/profile/arianagrande/">
+                        <img src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/s150x150/100945632_541520696525522_2564615845359648768_n.jpg?_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_ohc=JKH2QC-XezkAX9q8xwF&oh=e39266a243b498281b423464a563e769&oe=5FC8872D">
+                    </a>
+                </div>
+                
+                <div class="profile">
+                    <a href="/profile/therock/">
+                        <img src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/11850309_1674349799447611_206178162_a.jpg?_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_ohc=gPZVnhOdMgQAX8Tdnea&oh=cc879d9ebc83e5d324f52279f2390f0e&oe=5FC84284">
+                    </a>
+                </div>
+                
+                <div class="profile">
+                    <a href="/profile/kyliejenner/">
+                        <img src="https://instagram.fcmn2-2.fna.fbcdn.net/v/t51.2885-19/s150x150/97583101_532444297451866_4924448281406210048_n.jpg?_nc_ht=instagram.fcmn2-2.fna.fbcdn.net&_nc_ohc=hkDoocF_rK0AX9E-YPo&oh=542d6e3a6875659250cb0af52be9e957&oe=5FC93E18">
+                    </a>
+                </div>
+            </div>     
+            <div style="border:5px solid white; opacity: .4"></div> 
+        </section>
+        
         
         
         
@@ -770,9 +821,9 @@ margin-left: auto;
                         var t = document.querySelector('#mytemplate');
                         t.content.querySelector('.suggestion-img').src = data.users[i].user.profile_pic_url;
                         t.content.querySelector('.suggestion-uname').textContent= data.users[i].user.username;
-                        t.content.querySelector('.suggestion-uname').href = "profile.html"
+                        t.content.querySelector('.suggestion-uname').href = "/profile/" + data.users[i].user.username + "/";
                         t.content.querySelector('.suggestion-fname').textContent= data.users[i].user.full_name;
-                        t.content.querySelector('.suggestion-fname').href = "profile.html"
+                        t.content.querySelector('.suggestion-fname').href ="/profile/" + data.users[i].user.username + "/";
                         var clone = document.importNode(t.content, true);
                         suggestions.appendChild(clone);
                     }

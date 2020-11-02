@@ -2,10 +2,10 @@ var next = "0";
 var s = true;
 var id;
 $(document).ready(function(){
-    const username = "mustapha_swinga";
-    //var url = document.URL;
-    //var parts = url.split('/');
-    //var username = parts.pop() || parts.pop(); 
+    //const username = "mustapha_swinga";
+    var url = document.URL;
+    var parts = url.split('/');
+    var username = parts.pop() || parts.pop(); 
     $.get('https://www.instagram.com/'+username+'/?__a=1', function(data, status){
          if(status == 'success'){
             id = data.graphql.user.id;
